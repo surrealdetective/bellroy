@@ -1,9 +1,8 @@
-require './big_five_results_poster.rb'
-require './big_five_results_text_serializer.rb'
-require './big_five_results_example_text.rb'
+require './lib/big_five_results_poster.rb'
+require './lib/big_five_results_text_serializer.rb'
 
 # Convert Text to Hash
-text         = EXAMPLE_TEXT
+text         = File.open('./spec/fixtures/big_five_results_example_text.txt').read
 bfr_poster   = BigFiveResultsTextSerializer.new(text)
 results_hash = bfr_poster.to_h
 puts "Converted Big Five Results Text to Hash: #{results_hash}"
